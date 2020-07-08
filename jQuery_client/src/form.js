@@ -64,9 +64,9 @@ function getQueryParams() {
   let params = {};
   const dataset = $("input[name='dataset']:checked").map(() => (this.value)).get().join();
   if (dataset) params['dataset'] = dataset;
-  const stateTerritory = $("input[name='stateTerritory']:checked").map(() => (this.value)).get().join();
+  const stateTerritory = $("input[name='stateTerritory']:checked").map(function() {return this.value}).get().join();
   if (stateTerritory) params['stateTerritory'] = stateTerritory;
-  const addressType = $("input[name='addressType']:checked").map(() => (this.value)).get().join();
+  const addressType = $("input[name='addressType']:checked").map(function() {return this.value}).get().join();
   if (addressType) params['addressType'] = addressType;
   const maxNumberOfResults = $("#maxNumberOfResults").val();
   if (maxNumberOfResults) params['maxNumberOfResults'] = maxNumberOfResults;
@@ -99,5 +99,5 @@ function getAuth(id) {
 }
 
 function getCrs() {
-  return $("input[name='crs']:checked").map(() => (this.value)).get().join();
+  return $("input[name='crs']:checked").map(function() {return this.value}).get().join();
 }

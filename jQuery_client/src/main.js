@@ -4,10 +4,9 @@ function clearApiKey() {
 }
 
 function getAddress(suggestId) {
-    const headers = {
-        Authorization: getAuth(),
-        // 'Accept-Crs': get_crs()
-    };
+    let headers = {Authorization: getAuth()};
+    const crs = getCrs();
+    if (crs.length) headers['Accept-Crs'] = crs;
     $.ajax({
         url: getURL() + `${suggestId}/`,
         headers: headers
