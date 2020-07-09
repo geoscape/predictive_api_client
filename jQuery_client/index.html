@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Predictive API Client</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+
+    <!-- JSON View CSS -->
+    <link
+        type="text/css"
+        href="src/json_data_viewer/json-viewer/jquery.json-viewer.css"
+        rel="stylesheet">
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="src/main.css">
+  </head>
+  <body>
+    <div class="container">
+      <a href="#" onclick="clearApiKey()" class="float-right">Clear API key</a>
+
+      <form id="pav-form">
+        <h2>Predictive API Client</h2>
+        <a data-toggle="collapse" href="#predictiveFilters" role="button">
+          <b>Predictive Filters</b>
+        </a>
+        <div class="collapse show" id="predictiveFilters">
+          <div class="form-row">
+            <fieldset class="form-group col-lg-2 col-md-6 col-sm-12" id="state-territory-fieldset"></fieldset>
+            <fieldset class="form-group col-lg-2 col-md-6 col-sm-12" id="dataset-fieldset"></fieldset>
+            <fieldset class="form-group col-lg-2 col-md-6 col-sm-12" id="address-type-fieldset"></fieldset>
+            <fieldset class="form-group col-lg-2 col-md-6 col-sm-12" id="crs-fieldset"></fieldset>
+            <fieldset class="form-group col-lg-2 col-md-6 col-sm-12" id="limit-fieldset">
+              <legend>maxNumberOfResults</legend>
+              <input type="number" class="form-control form-control-sm"
+                     id="maxNumberOfResults"
+                     name="maxNumberOfResults"
+                     value="5" min="1" max="20">
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-lg-12">
+            <div id="typeahead">
+              <label for="address_typeahead">Address Lookup</label>
+              <input class="typeahead form-control" id="address_typeahead" name="query" type="text" placeholder="type to search...">
+            </div>
+          </div>
+        </div>
+
+      </form>
+
+      <div class="row" id="results-container"><pre id="json-viewer"></pre></div>
+
+    </div>
+
+    <!--  Bootstrap JS  -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+    <!-- Typeahead JS -->
+    <script
+      src="https://twitter.github.io/typeahead.js/releases/latest/typeahead.bundle.min.js"
+      crossorigin="anonymous"></script>
+
+    <!-- JSON View JS -->
+    <script type="text/javascript" src="src/json_data_viewer/json-viewer/jquery.json-viewer.js"></script>
+    <link type="text/css" href="src/json_data_viewer/json-viewer/jquery.json-viewer.css" rel="stylesheet">
+
+    <!--  Local JS  -->
+    <script type="text/javascript" src="src/config.js"></script>
+    <script type="text/javascript" src="src/form.js"></script>
+    <script type="text/javascript" src="src/main.js"></script>
+
+  </body>
+</html>
